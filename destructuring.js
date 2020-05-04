@@ -67,13 +67,8 @@ let statesPop = {
   arizona: 500000
 }
 let totalPopulation = (obj) =>{
-  const {utah} = obj;
-  const {california} = obj;
-  const {texas} = obj;
-  const {arizona} = obj;
-  return obj.reduce(element => {
-     = utah + california + texas + arizona
-  })
+  let {utah, california, texas, arizona} = obj
+  return utah + california + texas + arizona
 }
 
 
@@ -88,7 +83,19 @@ let totalPopulation = (obj) =>{
 */
 
 //Code Here
+let things = {
+  carb: 'potatoes',
+  fat: 'butter',
+  protein: 'steak'
+}
+let ingredients = (obj) => {
+  let ingredientsArr = []
+  let {carb, fat, protein} = obj
+  ingredientsArr.push(carb, fat, protein)
+  return ingredientsArr
+}
 
+console.log(ingredients(things))
 
 
 ////////// PROBLEM 5 //////////
@@ -106,6 +113,23 @@ let totalPopulation = (obj) =>{
 */
 
 //Code Here
+let nums = {
+  first: 23,
+  second: 42,
+  third: 56
+}
+let largeNumbers = ( {first, second, third} ) => {
+  if(first < second && first < third){
+    return first
+  }
+  else if(second < first && second < third){
+    return second
+  }
+  else{
+    return third
+  }
+}
+console.log(largeNumbers(nums))
 
 
 
@@ -118,5 +142,21 @@ let totalPopulation = (obj) =>{
 */
 
 //Code Here
-
+let arrays = {
+  a: [5, 6, 7, 8],
+  b: [9,10,11],
+  c: [12, 13]
+}
+let numberGroups = ({a, b, c}) =>{
+  if(a.length > b.length && a.length > c.length){
+    return a
+  }
+  else if(b.length > a.length && b.length > c.length){
+    return b
+  }
+  else{
+    return c
+  }
+}
+console.log(numberGroups(arrays))
 
